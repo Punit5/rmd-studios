@@ -86,7 +86,7 @@ export function BookingModal() {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 30 }}
-                        transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+                        transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
                         className="fixed inset-x-0 bottom-0 lg:inset-0 lg:flex lg:items-center lg:justify-center z-50 pointer-events-none"
                     >
                         <div className="pointer-events-auto w-full lg:max-w-xl bg-[#2D1F18] overflow-hidden">
@@ -96,7 +96,7 @@ export function BookingModal() {
                                 <motion.div
                                     className="h-full bg-[#C4A882]"
                                     animate={{ width: `${(step / STEPS) * 100}%` }}
-                                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
                                 />
                             </div>
 

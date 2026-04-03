@@ -51,7 +51,7 @@ export function AboutSection() {
                             className="absolute inset-0 bg-[#2D1F18] origin-top"
                             initial={{ scaleY: 1 }}
                             animate={{ scaleY: inView ? 0 : 1 }}
-                            transition={{ duration: 1.8, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
+                            transition={{ duration: 1.8, delay: 0.2, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] }}
                             style={{ transformOrigin: 'top' }}
                         />
                     </div>
@@ -82,7 +82,7 @@ export function AboutSection() {
                                     transition={{
                                         duration: 0.5,
                                         delay: 0.4 + i * 0.06,
-                                        ease: [0.25, 0.1, 0.25, 1],
+                                        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
                                     }}
                                     className={char === ' ' ? 'mr-3' : ''}
                                 >
@@ -127,7 +127,7 @@ export function AboutSection() {
                                     initial={{ scaleY: 0 }}
                                     animate={quoteLineInView ? { scaleY: 1 } : { scaleY: 0 }}
                                     style={{ height: '100%', transformOrigin: 'top' }}
-                                    transition={{ duration: 2, delay: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
+                                    transition={{ duration: 2, delay: 1.4, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
                                 />
                             </div>
 
