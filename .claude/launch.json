@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nextjs",
+      "runtimeExecutable": "/opt/homebrew/Cellar/node/24.1.0/bin/node",
+      "runtimeArgs": ["/opt/homebrew/bin/npm", "run", "dev"],
+      "env": { "PATH": "/opt/homebrew/Cellar/node/24.1.0/bin:/opt/homebrew/bin:/usr/bin:/bin" },
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

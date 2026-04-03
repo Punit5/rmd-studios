@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#1C1A18"/>
+
+  <!-- Single elongated petal, slightly tilted ~15deg, centered -->
+  <path
+    d="M18 6 C22 10 22 22 16 26 C10 22 10 10 14 6 C15.2 4.8 16.8 4.8 18 6Z"
+    fill="#C4A882"
+    transform="rotate(-15 16 16)"
+  />
+</svg>
