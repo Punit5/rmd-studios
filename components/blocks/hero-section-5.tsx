@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import { useScroll, motion } from 'motion/react'
 import { ButtonColorful } from '@/components/ui/button-colorful'
+import { NeonButton } from '@/components/ui/neon-button'
 import { useBooking } from '@/components/providers/booking-provider'
 
 export function HeroSection() {
@@ -50,11 +51,14 @@ export function HeroSection() {
                                     onClick={open}
                                     className="h-12 px-8 text-sm tracking-widest uppercase"
                                 />
-                                <Link
-                                    href="#portfolio"
-                                    className="inline-flex items-center justify-center px-8 py-4 border border-white/40 text-white text-sm tracking-widest uppercase font-medium hover:border-white/80 transition-colors duration-300"
-                                >
-                                    View Work
+                                <Link href="#portfolio" className="inline-flex">
+                                    <NeonButton
+                                        className="h-12 px-8 text-sm tracking-widest uppercase font-medium text-white"
+                                        variant="default"
+                                        size="lg"
+                                    >
+                                        View Work
+                                    </NeonButton>
                                 </Link>
                             </div>
                         </motion.div>
