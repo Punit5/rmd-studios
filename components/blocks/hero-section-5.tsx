@@ -154,7 +154,7 @@ const HeroHeaderComponent = () => {
                         'lg:hidden overflow-hidden transition-all duration-300',
                         menuState ? 'max-h-72 pb-6' : 'max-h-0'
                     )}>
-                        <ul className="flex flex-col gap-5 pt-2 bg-[#2D1F18]/80 backdrop-blur-xl -mx-6 px-6 pb-6">
+                        <ul className="flex flex-col gap-5 pt-2 bg-[#FAF8F5]/20 backdrop-blur-xl -mx-6 px-6 pb-6">
                             {menuItems.map((item, index) => (
                                 <li key={index}>
                                     <Link
