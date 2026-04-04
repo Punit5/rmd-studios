@@ -175,7 +175,7 @@ const HeroHeaderComponent = () => {
                             <li>
                                 <button
                                     onClick={() => { open(); setMenuState(false) }}
-                                    className="text-[#C4A882] text-xs tracking-[0.2em] uppercase">
+                                    className="text-white/90 hover:text-white text-sm tracking-[0.2em] uppercase transition-colors">
                                     Book Now
                                 </button>
                             </li>
