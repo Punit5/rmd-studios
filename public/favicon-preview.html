@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 40px; font-family: Georgia, serif; }
+    .label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #bbb; text-align: center; }
+    .sizes { display: flex; gap: 32px; align-items: flex-end; }
+    .size-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .size-label { font-size: 10px; color: #ccc; letter-spacing: 0.1em; }
+  </style>
+</head>
+<body>
+
+<!-- Full preview -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 340" width="280" height="340">
+  <defs>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C49A2A;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#8B6510;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#D4AA40;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A07818;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hairGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AA40;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B48820;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C49A2A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C49020;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B6010;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AA40;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C49020;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="280" height="340" fill="#FFFFFF"/>
+
+  <!-- === HAIR BACK — flowing golden mass === -->
+  <!-- Left side hair -->
+  <path d="M30 60 Q20 30 140 10 Q200 15 220 50 Q240 30 235 80
+           Q250 50 248 120 Q255 170 240 230 Q220 290 200 330
+           Q160 340 140 340 Q100 340 70 320
+           Q40 295 30 250 Q15 195 20 140 Q10 90 30 60Z"
+        fill="url(#hairGrad)" opacity="0.9"/>
+
+  <!-- Right side flowing hair strands -->
+  <path d="M220 50 Q245 80 248 140 Q252 200 240 260 Q225 310 210 340"
+        fill="none" stroke="#C49A2A" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M225 60 Q255 100 258 165 Q260 220 245 280"
+        fill="none" stroke="#D4AA40" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M218 55 Q242 90 244 155 Q246 215 230 270 Q215 310 200 335"
+        fill="none" stroke="#B48820" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Left loose strands -->
+  <path d="M35 65 Q25 95 28 150 Q30 200 40 250"
+        fill="none" stroke="#C49A2A" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <path d="M40 60 Q32 100 35 160"
+        fill="none" stroke="#D4AA40" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Sparkle dots -->
+  <circle cx="55" cy="120" r="2" fill="#F0D060" opacity="0.7"/>
+  <circle cx="48" cy="145" r="1.5" fill="#F0D060" opacity="0.5"/>
+  <circle cx="245" cy="155" r="2" fill="#F0D060" opacity="0.6"/>
+  <circle cx="252" cy="180" r="1.5" fill="#F0D060" opacity="0.4"/>
+  <circle cx="238" cy="210" r="2.5" fill="#F0D060" opacity="0.5"/>
+
+  <!-- === NECK === -->
+  <path d="M118 210 Q115 240 116 268 L148 268 Q149 240 146 210 Q140 215 132 215 Q124 215 118 210Z"
+        fill="white" stroke="#E0C8A8" stroke-width="0.6" opacity="0.8"/>
+  <!-- Neck shadow line -->
+  <line x1="118" y1="212" x2="116" y2="268" stroke="#D4B890" stroke-width="0.8" opacity="0.4"/>
+  <line x1="146" y1="212" x2="148" y2="268" stroke="#D4B890" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- === FACE — minimal white, thin outline === -->
+  <ellipse cx="140" cy="130" rx="62" ry="78" fill="white"/>
+  <!-- Subtle jaw/cheek shading -->
+  <path d="M85 150 Q82 175 90 195 Q105 220 140 225 Q175 220 190 195 Q198 175 195 150"
+        fill="none" stroke="#E0C8A8" stroke-width="1.5" opacity="0.6"/>
+  <!-- Face side shadow -->
+  <path d="M85 110 Q80 140 82 170 Q86 195 100 215"
+        fill="none" stroke="#D4B890" stroke-width="1.2" opacity="0.3"/>
+
+  <!-- === EYEBROWS — natural dark strokes === -->
+  <!-- Left brow -->
+  <path d="M98 88 Q110 82 124 84" fill="none" stroke="#3A2810" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M99 89 Q111 83 124 85" fill="none" stroke="#3A2810" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+  <!-- Right brow -->
+  <path d="M152 84 Q166 80 178 84" fill="none" stroke="#3A2810" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M152 85 Q166 81 178 85" fill="none" stroke="#3A2810" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- === LEFT EYE (viewer's right) — gold shadow + lashes === -->
+  <!-- Gold eyeshadow -->
+  <path d="M98 100 Q110 93 124 96 Q130 95 136 100 Q128 107 116 107 Q105 108 98 104Z"
+        fill="url(#eyeGrad)" opacity="0.9"/>
+  <!-- Eyelid crease -->
+  <path d="M100 101 Q114 96 130 100" fill="none" stroke="#A07018" stroke-width="0.8" opacity="0.6"/>
+  <!-- Closed lid line -->
+  <path d="M100 104 Q114 100 130 103" stroke="#1a1210" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Upper lashes - long dramatic -->
+  <line x1="102" y1="103" x2="98" y2="94" stroke="#1a1210" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="106" y1="101" x2="103" y2="91" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="111" y1="100" x2="109" y2="89" stroke="#1a1210" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="116" y1="100" x2="115" y2="88" stroke="#1a1210" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="121" y1="100" x2="121" y2="89" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="126" y1="101" x2="127" y2="91" stroke="#1a1210" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="130" y1="103" x2="133" y2="93" stroke="#1a1210" stroke-width="1.1" stroke-linecap="round"/>
+  <!-- Wing lashes -->
+  <line x1="100" y1="104" x2="92" y2="98" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="100" y1="104" x2="90" y2="101" stroke="#1a1210" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="100" y1="104" x2="91" y2="105" stroke="#1a1210" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- === RIGHT EYE (viewer's left) — gold shadow + lashes === -->
+  <!-- Gold eyeshadow -->
+  <path d="M148 96 Q158 90 172 93 Q180 92 186 98 Q178 105 166 105 Q155 106 148 102Z"
+        fill="url(#eyeGrad)" opacity="0.9"/>
+  <!-- Eyelid crease -->
+  <path d="M150 97 Q164 93 182 97" fill="none" stroke="#A07018" stroke-width="0.8" opacity="0.6"/>
+  <!-- Closed lid line -->
+  <path d="M150 101 Q165 97 182 101" stroke="#1a1210" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Upper lashes -->
+  <line x1="152" y1="101" x2="149" y2="91" stroke="#1a1210" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="157" y1="99" x2="155" y2="89" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="162" y1="98" x2="161" y2="87" stroke="#1a1210" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="167" y1="98" x2="167" y2="87" stroke="#1a1210" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="172" y1="99" x2="173" y2="89" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="177" y1="100" x2="179" y2="91" stroke="#1a1210" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="181" y1="101" x2="184" y2="93" stroke="#1a1210" stroke-width="1.1" stroke-linecap="round"/>
+  <!-- Wing lashes -->
+  <line x1="182" y1="101" x2="191" y2="96" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="182" y1="101" x2="192" y2="99" stroke="#1a1210" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="182" y1="101" x2="191" y2="103" stroke="#1a1210" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- === NOSE — barely visible === -->
+  <path d="M133 145 Q129 155 132 159 Q140 162 148 159 Q151 155 147 145"
+        fill="none" stroke="#D4B890" stroke-width="1" opacity="0.45"/>
+
+  <!-- === LIPS — gold/bronze === -->
+  <!-- Upper lip -->
+  <path d="M116 172 Q125 165 133 169 Q140 163 147 169 Q155 165 164 172 Q158 179 147 175 Q140 180 133 175 Q122 179 116 172Z"
+        fill="url(#lipGrad)"/>
+  <!-- Lower lip -->
+  <path d="M116 172 Q122 179 133 175 Q140 180 147 175 Q158 179 164 172 Q158 190 140 194 Q122 190 116 172Z"
+        fill="#C49020"/>
+  <!-- Lip highlight -->
+  <ellipse cx="140" cy="183" rx="10" ry="4" fill="#E0B840" opacity="0.3"/>
+  <!-- Lip outline -->
+  <path d="M116 172 Q125 165 133 169 Q140 163 147 169 Q155 165 164 172"
+        fill="none" stroke="#8B6010" stroke-width="0.6" opacity="0.7"/>
+
+  <!-- === HAND touching cheek === -->
+  <!-- Palm -->
+  <path d="M155 168 Q168 160 178 162 Q185 165 183 175 Q181 183 172 186 Q162 188 154 182 Q148 176 155 168Z"
+        fill="white" stroke="#E0C8A8" stroke-width="0.8"/>
+  <!-- Index finger -->
+  <path d="M158 168 Q156 155 158 142 Q160 135 163 142 Q165 155 163 168"
+        fill="white" stroke="#E0C8A8" stroke-width="0.8"/>
+  <!-- Middle finger -->
+  <path d="M164 167 Q163 152 165 138 Q167 131 170 138 Q172 152 170 167"
+        fill="white" stroke="#E0C8A8" stroke-width="0.8"/>
+  <!-- Ring finger -->
+  <path d="M170 168 Q170 154 172 142 Q174 135 177 142 Q178 154 176 168"
+        fill="white" stroke="#E0C8A8" stroke-width="0.8"/>
+  <!-- Little finger -->
+  <path d="M152 172 Q150 161 152 152 Q154 146 156 152 Q158 161 156 172"
+        fill="white" stroke="#E0C8A8" stroke-width="0.8"/>
+
+  <!-- === HAIR FRONT strands over face === -->
+  <path d="M88 40 Q80 70 78 110 Q76 150 82 190"
+        fill="none" stroke="#C49A2A" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+  <path d="M84 38 Q74 75 72 120"
+        fill="none" stroke="#D4AA40" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+  <path d="M92 36 Q86 65 85 100 Q84 135 88 170"
+        fill="none" stroke="#B48820" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Sparkle on eye area -->
+  <circle cx="134" cy="96" r="1.5" fill="#F5E070" opacity="0.8"/>
+  <circle cx="168" cy="93" r="1.5" fill="#F5E070" opacity="0.8"/>
+  <circle cx="120" cy="98" r="1" fill="#F5E070" opacity="0.6"/>
+</svg>
+
+<div class="label">Full illustration preview</div>
+
+<!-- Size previews -->
+<div class="sizes">
+  <div class="size-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 340" width="96" height="116">
+      <defs>
+        <linearGradient id="hG2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C49A2A"/><stop offset="50%" style="stop-color:#8B6510"/><stop offset="100%" style="stop-color:#D4AA40"/></linearGradient>
+        <linearGradient id="lG2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#C49020"/><stop offset="100%" style="stop-color:#8B6010"/></linearGradient>
+        <linearGradient id="eG2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4AA40"/><stop offset="100%" style="stop-color:#C49020;stop-opacity:0.7"/></linearGradient>
+      </defs>
+      <rect width="280" height="340" fill="#fff"/>
+      <path d="M30 60 Q20 30 140 10 Q200 15 220 50 Q240 30 235 80 Q250 50 248 120 Q255 170 240 230 Q220 290 200 330 Q160 340 140 340 Q100 340 70 320 Q40 295 30 250 Q15 195 20 140 Q10 90 30 60Z" fill="url(#hG2)" opacity="0.9"/>
+      <ellipse cx="140" cy="130" rx="62" ry="78" fill="white"/>
+      <path d="M98 100 Q110 93 124 96 Q130 95 136 100 Q128 107 116 107 Q105 108 98 104Z" fill="url(#eG2)" opacity="0.9"/>
+      <path d="M100 104 Q114 100 130 103" stroke="#1a1210" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <line x1="106" y1="101" x2="103" y2="91" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="113" y1="100" x2="112" y2="88" stroke="#1a1210" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="121" y1="100" x2="121" y2="89" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="129" y1="101" x2="131" y2="91" stroke="#1a1210" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="100" y1="104" x2="91" y2="99" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M148 96 Q158 90 172 93 Q180 92 186 98 Q178 105 166 105 Q155 106 148 102Z" fill="url(#eG2)" opacity="0.9"/>
+      <path d="M150 101 Q165 97 182 101" stroke="#1a1210" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <line x1="157" y1="99" x2="155" y2="89" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="165" y1="98" x2="165" y2="87" stroke="#1a1210" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="173" y1="99" x2="174" y2="89" stroke="#1a1210" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="182" y1="101" x2="191" y2="96" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M116 172 Q125 165 133 169 Q140 163 147 169 Q155 165 164 172 Q158 179 147 175 Q140 180 133 175 Q122 179 116 172Z" fill="url(#lG2)"/>
+      <path d="M116 172 Q122 179 133 175 Q140 180 147 175 Q158 179 164 172 Q158 190 140 194 Q122 190 116 172Z" fill="#C49020"/>
+    </svg>
+    <div class="size-label">96px</div>
+  </div>
+
+  <div class="size-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 340" width="48" height="58">
+      <defs>
+        <linearGradient id="hG3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C49A2A"/><stop offset="100%" style="stop-color:#D4AA40"/></linearGradient>
+        <linearGradient id="eG3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4AA40"/><stop offset="100%" style="stop-color:#C49020;stop-opacity:0.7"/></linearGradient>
+      </defs>
+      <rect width="280" height="340" fill="#fff"/>
+      <path d="M30 60 Q20 30 140 10 Q200 15 220 50 Q240 30 235 80 Q250 50 248 120 Q255 170 240 230 Q220 290 200 330 Q160 340 140 340 Q100 340 70 320 Q40 295 30 250 Q15 195 20 140 Q10 90 30 60Z" fill="url(#hG3)"/>
+      <ellipse cx="140" cy="130" rx="62" ry="78" fill="white"/>
+      <path d="M98 100 Q110 93 124 96 Q130 95 136 100 Q128 107 116 107 Q105 108 98 104Z" fill="url(#eG3)"/>
+      <path d="M100 104 Q114 100 130 103" stroke="#1a1210" stroke-width="2" fill="none"/>
+      <line x1="113" y1="100" x2="112" y2="88" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="121" y1="100" x2="121" y2="89" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="100" y1="104" x2="90" y2="98" stroke="#1a1210" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M148 96 Q158 90 172 93 Q180 92 186 98 Q178 105 166 105 Q155 106 148 102Z" fill="url(#eG3)"/>
+      <path d="M150 101 Q165 97 182 101" stroke="#1a1210" stroke-width="2" fill="none"/>
+      <line x1="165" y1="98" x2="165" y2="87" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="173" y1="99" x2="174" y2="89" stroke="#1a1210" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="182" y1="101" x2="192" y2="96" stroke="#1a1210" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M116 172 Q125 165 133 169 Q140 163 147 169 Q155 165 164 172 Q158 179 147 175 Q140 180 133 175 Q122 179 116 172Z" fill="#C49020"/>
+      <path d="M116 172 Q122 179 133 175 Q140 180 147 175 Q158 179 164 172 Q158 190 140 194 Q122 190 116 172Z" fill="#A07018"/>
+    </svg>
+    <div class="size-label">48px</div>
+  </div>
+
+  <div class="size-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 340" width="32" height="38">
+      <defs>
+        <linearGradient id="hG4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C49A2A"/><stop offset="100%" style="stop-color:#D4AA40"/></linearGradient>
+      </defs>
+      <rect width="280" height="340" fill="#fff"/>
+      <path d="M30 60 Q20 30 140 10 Q200 15 220 50 Q240 30 235 80 Q250 50 248 120 Q255 170 240 230 Q220 290 200 330 Q160 340 140 340 Q100 340 70 320 Q40 295 30 250 Q15 195 20 140 Q10 90 30 60Z" fill="url(#hG4)"/>
+      <ellipse cx="140" cy="130" rx="62" ry="78" fill="white"/>
+      <path d="M98 100 Q110 93 124 96 Q130 95 136 100 Q128 107 116 107 Q105 108 98 104Z" fill="#D4AA40"/>
+      <path d="M100 104 Q114 100 130 103" stroke="#1a1210" stroke-width="2.2" fill="none"/>
+      <line x1="113" y1="100" x2="112" y2="86" stroke="#1a1210" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="100" y1="104" x2="89" y2="97" stroke="#1a1210" stroke-width="2" stroke-linecap="round"/>
+      <path d="M148 96 Q158 90 172 93 Q180 92 186 98 Q178 105 166 105 Q155 106 148 102Z" fill="#D4AA40"/>
+      <path d="M150 101 Q165 97 182 101" stroke="#1a1210" stroke-width="2.2" fill="none"/>
+      <line x1="165" y1="98" x2="165" y2="85" stroke="#1a1210" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="182" y1="101" x2="193" y2="95" stroke="#1a1210" stroke-width="2" stroke-linecap="round"/>
+      <path d="M116 172 Q125 165 133 169 Q140 163 147 169 Q155 165 164 172 Q158 190 140 194 Q122 190 116 172Z" fill="#C49020"/>
+    </svg>
+    <div class="size-label">32px</div>
+  </div>
+
+  <div class="size-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 340" width="16" height="19">
+      <rect width="280" height="340" fill="#fff"/>
+      <path d="M30 60 Q20 30 140 10 Q200 15 220 50 Q240 30 235 80 Q250 50 248 120 Q255 170 240 230 Q220 290 200 330 Q160 340 140 340 Q100 340 70 320 Q40 295 30 250 Q15 195 20 140 Q10 90 30 60Z" fill="#C49A2A"/>
+      <ellipse cx="140" cy="130" rx="62" ry="78" fill="white"/>
+      <path d="M98 100 Q110 93 124 96 Q130 95 136 100 Q128 107 116 107 Q105 108 98 104Z" fill="#D4AA40"/>
+      <path d="M148 96 Q158 90 172 93 Q180 92 186 98 Q178 105 166 105 Q155 106 148 102Z" fill="#D4AA40"/>
+      <path d="M116 172 Q125 165 133 169 Q140 163 147 169 Q155 165 164 172 Q158 190 140 194 Q122 190 116 172Z" fill="#C49020"/>
+    </svg>
+    <div class="size-label">16px</div>
+  </div>
+</div>
+
+<div class="label">Sizes — 96 / 48 / 32 / 16 px</div>
+
+</body>
+</html>

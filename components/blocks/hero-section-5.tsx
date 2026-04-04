@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
@@ -7,6 +8,8 @@ import { useScroll, motion } from 'motion/react'
 import { ButtonColorful } from '@/components/ui/button-colorful'
 import { NeonButton } from '@/components/ui/neon-button'
 import { useBooking } from '@/components/providers/booking-provider'
+
+const HeroHeader = dynamic(() => Promise.resolve(HeroHeaderComponent), { ssr: false })
 
 export function HeroSection() {
     const { open } = useBooking()
@@ -81,10 +84,9 @@ const menuItems = [
     { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#' },
 ]
 
-const HeroHeader = () => {
+const HeroHeaderComponent = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [scrolled, setScrolled] = React.useState(false)
     const { scrollYProgress } = useScroll()
@@ -131,6 +133,13 @@ const HeroHeader = () => {
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <button
+                                    onClick={open}
+                                    className="text-white/70 hover:text-white transition-colors duration-200 text-xs tracking-[0.2em] uppercase">
+                                    Contact
+                                </button>
+                            </li>
                         </ul>
 
                         <ButtonColorful
@@ -156,6 +165,13 @@ const HeroHeader = () => {
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <button
+                                    onClick={() => { open(); setMenuState(false) }}
+                                    className="text-white/90 hover:text-white text-sm tracking-[0.2em] uppercase transition-colors">
+                                    Contact
+                                </button>
+                            </li>
                             <li>
                                 <button
                                     onClick={() => { open(); setMenuState(false) }}

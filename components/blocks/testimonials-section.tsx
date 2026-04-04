@@ -4,18 +4,18 @@ import { AnimatePresence, motion } from 'motion/react'
 
 const testimonials = [
     {
-        quote: "Sofia made me feel like the most beautiful version of myself. I wasn't wearing a look — I was wearing confidence.",
-        client: "Isabelle R.",
+        quote: "Ria made me feel like the most beautiful version of myself. I wasn't wearing a look — I was wearing confidence.",
+        client: "Ananya S.",
         occasion: "Married, September 2024",
     },
     {
-        quote: "I cried when I saw myself in the mirror. Not from stress — from joy. That's what she does.",
-        client: "Priya M.",
+        quote: "I cried when I saw myself in the mirror. Not from stress — from joy. That's what Ria does.",
+        client: "Meera K.",
         occasion: "Married, March 2024",
     },
     {
-        quote: "Eight hours from first touch to last dance, and my look never moved. More than a makeup artist — she's an artist.",
-        client: "Charlotte D.",
+        quote: "Eight hours from first touch to last dance, and my look never moved. Ria is more than a makeup artist — she's an artist.",
+        client: "Divya P.",
         occasion: "Married, June 2023",
     },
 ]

@@ -1,8 +1,11 @@
 'use client'
 import { useBooking } from '@/components/providers/booking-provider'
 import { AnimatePresence, motion } from 'motion/react'
-import { X, ArrowLeft, Flower, Sparkles } from 'lucide-react'
+import { X, ArrowLeft, Flower, Sparkles, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
+import Image from 'next/image'
+
+type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
 
 const STEPS = 3
 
@@ -42,6 +45,7 @@ export function BookingModal() {
     const { isOpen, close } = useBooking()
     const [step, setStep] = useState(1)
     const [dir, setDir] = useState(1)
+    const [status, setStatus] = useState<SubmitStatus>('idle')
     const [form, setForm] = useState({
         eventType: '',
         name: '',
@@ -58,11 +62,26 @@ export function BookingModal() {
 
     const handleClose = () => {
         close()
-        setTimeout(() => { setStep(1); setDir(1) }, 400)
+        setTimeout(() => { setStep(1); setDir(1); setStatus('idle') }, 400)
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    }
+
+    const handleSubmit = async () => {
+        setStatus('loading')
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form),
+            })
+            if (!res.ok) throw new Error()
+            setStatus('success')
+        } catch {
+            setStatus('error')
+        }
     }
 
     return (
@@ -89,7 +108,66 @@ export function BookingModal() {
                         transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
                         className="fixed inset-x-0 bottom-0 lg:inset-0 lg:flex lg:items-center lg:justify-center z-50 pointer-events-none"
                     >
-                        <div className="pointer-events-auto w-full lg:max-w-xl bg-[#2D1F18] overflow-hidden">
+                        <div className="pointer-events-auto w-full lg:max-w-xl bg-[#2D1F18] overflow-hidden relative">
+
+                            {/* ── Background illustration ── */}
+                            <div className="absolute inset-0 z-0">
+                                <Image
+                                    src="/booking-illustration.png"
+                                    alt=""
+                                    fill
+                                    className="object-cover object-top"
+                                    priority
+                                />
+                                <div className="absolute inset-0 bg-[#2D1F18]/85" />
+                            </div>
+
+                            {/* ── Form content ── */}
+                            <div className="relative z-10">
+                            <AnimatePresence mode="wait">
+                            {status === 'success' ? (
+
+                                /* ── Success screen ── */
+                                <motion.div
+                                    key="success"
+                                    initial={{ opacity: 0, y: 24 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -24 }}
+                                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                                    className="flex flex-col items-center justify-center text-center px-10 py-16 min-h-[480px]"
+                                >
+                                    <motion.div
+                                        initial={{ scale: 0.5, opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        transition={{ delay: 0.2, duration: 0.5, ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number] }}
+                                    >
+                                        <CheckCircle className="size-14 text-[#C4A882] mb-8 mx-auto" strokeWidth={1.2} />
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 12 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.4, duration: 0.5 }}
+                                    >
+                                        <p className="text-[#C4A882] text-xs tracking-[0.3em] uppercase mb-4">Request Received</p>
+                                        <h2 className="font-serif text-3xl text-white mb-4">
+                                            Thank you, {form.name.split(' ')[0]}
+                                        </h2>
+                                        <p className="text-white/50 text-sm leading-relaxed max-w-xs mx-auto mb-10">
+                                            Ria will review your request and be in touch within 24–48 hours.
+                                        </p>
+                                        <div className="w-12 h-px bg-[#C4A882]/40 mx-auto mb-10" />
+                                        <button
+                                            onClick={handleClose}
+                                            className="text-white/40 hover:text-white text-xs tracking-[0.25em] uppercase transition-colors duration-200"
+                                        >
+                                            Close
+                                        </button>
+                                    </motion.div>
+                                </motion.div>
+
+                            ) : (
+                            <motion.div key="form" initial={{ opacity: 1 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.3 }}>
 
                             {/* Progress bar */}
                             <div className="h-px bg-white/10 w-full">
@@ -237,15 +315,22 @@ export function BookingModal() {
                                             </p>
 
                                             <button
-                                                type="submit"
-                                                className="w-full py-4 bg-[#C4A882] text-[#1C1A18] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#b8976d] transition-colors duration-300"
+                                                type="button"
+                                                onClick={handleSubmit}
+                                                disabled={status === 'loading'}
+                                                className="w-full py-4 bg-[#C4A882] text-[#1C1A18] text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#b8976d] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                                             >
-                                                Send Request
+                                                {status === 'loading' ? 'Sending...' : status === 'error' ? 'Failed — Try Again' : 'Send Request'}
                                             </button>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
                             </div>
+                            </motion.div>
+                            )}
+                            </AnimatePresence>
+                            </div>{/* end form content */}
+
                         </div>
                     </motion.div>
                 </>
