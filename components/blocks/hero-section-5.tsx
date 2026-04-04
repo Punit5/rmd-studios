@@ -99,7 +99,7 @@ const HeroHeader = () => {
                 data-state={menuState && 'active'}
                 className={cn(
                     'group fixed z-20 w-full transition-all duration-500',
-                    scrolled ? 'bg-[#1C1A18]/90 backdrop-blur-md' : ''
+                    scrolled ? 'bg-[#1C1A18]/90 backdrop-blur-md' : 'bg-gradient-to-b from-black/50 to-transparent'
                 )}>
                 <div className="mx-auto max-w-7xl px-6 lg:px-12">
                     <div className={cn(
@@ -141,13 +141,13 @@ const HeroHeader = () => {
                         'lg:hidden overflow-hidden transition-all duration-300',
                         menuState ? 'max-h-72 pb-6' : 'max-h-0'
                     )}>
-                        <ul className="flex flex-col gap-5 pt-2">
+                        <ul className="flex flex-col gap-5 pt-2 bg-[#1C1A18]/95 backdrop-blur-md -mx-6 px-6 pb-6 rounded-b-xl">
                             {menuItems.map((item, index) => (
                                 <li key={index}>
                                     <Link
                                         href={item.href}
                                         onClick={() => setMenuState(false)}
-                                        className="text-white/70 hover:text-white text-xs tracking-[0.2em] uppercase transition-colors">
+                                        className="text-white/90 hover:text-white text-sm tracking-[0.2em] uppercase transition-colors">
                                         {item.name}
                                     </Link>
                                 </li>
